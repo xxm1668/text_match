@@ -1,0 +1,13 @@
+CUDA_VISIBLE_DEVICES=1 nohup python3 train_dssm.py \
+    --model "/home/worker/nlp/hao/ernie-3.0-base-zh" \
+    --train_path "data/comment_classify/train.txt" \
+    --dev_path "data/comment_classify/dev.txt" \
+    --save_dir "checkpoints/comment_classify" \
+    --img_log_dir "logs/comment_classify" \
+    --img_log_name "ERNIE-PointWise" \
+    --batch_size 8 \
+    --max_seq_len 128 \
+    --valid_steps 50 \
+    --logging_steps 10 \
+    --num_train_epochs 1 \
+    --device "cuda:0"
